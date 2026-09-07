@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { lime: '#B5F34B', canvas: '#202020', paper: '#FAF9F6' },
+                    fontFamily: { sans: ['Karla', 'ui-sans-serif', 'system-ui', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-paper font-sans text-[#151515] antialiased">
+    <div class="min-h-screen w-full bg-paper" id="app">
+        <p class="fixed left-5 top-2 text-xs text-white/45 sm:absolute sm:left-5 sm:top-2">Donation Page</p>
+        <header class="flex h-20 items-center justify-between bg-[#f8f7f3] px-5 sm:px-10 lg:px-16" id="site-header">
+            <button type="button" class="rounded bg-lime px-5 py-2 text-sm font-bold leading-none" id="blog-link">Blog</button>
+            <div class="flex items-center gap-3">
+                <img src="assets/logo.png" alt="" class="h-10 w-10 object-contain">
+                <span class="text-sm font-bold sm:text-base">Donate Bangladesh</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-[#393939]" id="balance-display">
+                <img src="assets/coin.png" alt="" class="h-4 w-4 object-contain">
+                <span>5500 BDT</span>
+            </div>
+        </header>
+        <main class="mx-auto w-full max-w-[1120px] px-5 pb-12 pt-8 sm:px-10 lg:px-16" id="donation-app">
+            <div class="mb-6 flex justify-center gap-2" role="tablist" aria-label="Donation views">
+                <button type="button" class="rounded bg-lime px-4 py-1.5 text-[10px] font-bold" id="donation-tab" role="tab" aria-selected="true">Donation</button>
+                <button type="button" class="rounded border border-[#d6d6d6] bg-white px-4 py-1.5 text-[10px] font-medium text-[#555]" id="history-tab" role="tab" aria-selected="false">History</button>
+            </div>
+            <section class="space-y-5" id="campaign-list" aria-label="Donation campaigns">
+                <article class="rounded-lg border border-[#e7e7e7] bg-white p-3 sm:p-4" data-campaign="noakhali">
+                    <div class="grid grid-cols-[1.07fr_1fr] gap-3 sm:gap-5">
+                        <img src="assets/noakhali.png" alt="Rescue workers helping people during the Noakhali flood" class="h-[137px] w-full rounded object-cover sm:h-[210px] lg:h-[250px]">
+                        <div class="min-w-0">
+                            <p class="mb-2 inline-flex items-center gap-1 rounded bg-[#f4f4f4] px-2 py-1 text-[9px] text-[#555]"><img src="assets/coin.png" alt="" class="h-3 w-3"> 0 BDT</p>
+                            <h2 class="text-xs font-bold leading-tight sm:text-base">Donate for Flood at Noakhali, Bangladesh</h2>
+                            <p class="mt-2 text-[10px] leading-[1.35] text-[#777] sm:text-sm">The recent floods in Noakhali have caused significant damage to homes, infrastructure. Your donation will help provide essential supplies and aid to those affected by this disaster.</p>
+                            <input type="number" min="0" placeholder="Write Donation Amount" class="mt-3 h-8 w-full rounded border border-[#e9e9e9] px-2 text-[10px] outline-none placeholder:text-[#aaa] sm:text-xs">
+                            <button type="button" class="mt-2 h-8 w-full rounded bg-lime text-[10px] font-bold sm:text-xs">Donate Now</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="rounded-lg border border-[#e7e7e7] bg-white p-3 sm:p-4" data-campaign="feni">
+                    <div class="grid grid-cols-[1.07fr_1fr] gap-3 sm:gap-5">
+                        <img src="assets/feni.png" alt="Aerial view of flooding in Feni, Bangladesh" class="h-[137px] w-full rounded object-cover sm:h-[210px] lg:h-[250px]">
+                        <div class="min-w-0">
+                            <p class="mb-2 inline-flex items-center gap-1 rounded bg-[#f4f4f4] px-2 py-1 text-[9px] text-[#555]"><img src="assets/coin.png" alt="" class="h-3 w-3"> 600 BDT</p>
+                            <h2 class="text-xs font-bold leading-tight sm:text-base">Donate for Flood Relief in Feni, Bangladesh</h2>
+                            <p class="mt-2 text-[10px] leading-[1.35] text-[#777] sm:text-sm">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies.</p>
+                            <input type="number" min="0" placeholder="Write Donation Amount" class="mt-3 h-8 w-full rounded border border-[#e9e9e9] px-2 text-[10px] outline-none placeholder:text-[#aaa] sm:text-xs">
+                            <button type="button" class="mt-2 h-8 w-full rounded bg-lime text-[10px] font-bold sm:text-xs">Donate Now</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="rounded-lg border border-[#e7e7e7] bg-white p-3 sm:p-4" data-campaign="quota">
+                    <div class="grid grid-cols-[1.07fr_1fr] gap-3 sm:gap-5">
+                        <img src="assets/quota-protest.png" alt="People gathered during the Quota Movement" class="h-[137px] w-full rounded object-cover sm:h-[210px] lg:h-[250px]">
+                        <div class="min-w-0">
+                            <p class="mb-2 inline-flex items-center gap-1 rounded bg-[#f4f4f4] px-2 py-1 text-[9px] text-[#555]"><img src="assets/coin.png" alt="" class="h-3 w-3"> 2400 BDT</p>
+                            <h2 class="text-xs font-bold leading-tight sm:text-base">Aid for Injured in the Quota Movement</h2>
+                            <p class="mt-2 text-[10px] leading-[1.35] text-[#777] sm:text-sm">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies.</p>
+                            <input type="number" min="0" placeholder="Write Donation Amount" class="mt-3 h-8 w-full rounded border border-[#e9e9e9] px-2 text-[10px] outline-none placeholder:text-[#aaa] sm:text-xs">
+                            <button type="button" class="mt-2 h-8 w-full rounded bg-lime text-[10px] font-bold sm:text-xs">Donate Now</button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer class="h-14 bg-[#f8f7f3]"></footer>
+    </div>
+    <div id="confirmation-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/45 px-4" role="dialog" aria-modal="true" aria-labelledby="confirmation-title">
+        <div class="w-full max-w-[430px] rounded-xl bg-white px-6 py-7 text-center shadow-xl sm:px-10">
+            <h2 id="confirmation-title" class="text-2xl font-bold text-[#283342] sm:text-3xl">Congrats!</h2>
+            <img src="assets/coin.png" alt="Donation coin" class="mx-auto my-4 h-10 w-10 object-contain">
+            <p class="text-sm text-[#586170]">You Have Donated for Humankind</p>
+            <p class="mt-3 text-base font-bold text-[#283342]">Successfully</p>
+            <button type="button" id="close-confirmation" class="mt-5 rounded-lg bg-[#f1f2f3] px-4 py-3 text-xs font-bold text-[#404854]">close confirmation</button>
+        </div>
+    </div>
+    <script src="js/donetio.js"></script>
+</body>
+</html>
