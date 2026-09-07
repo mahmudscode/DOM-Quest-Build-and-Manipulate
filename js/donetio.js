@@ -76,6 +76,7 @@ const donationTab = document.querySelector('#donation-tab');
 const historyTab = document.querySelector('#history-tab');
 const campaignList = document.querySelector('#campaign-list');
 const historySection = document.querySelector('#history-section');
+const blogLink = document.querySelector('#blog-link');
 
 historyTab.addEventListener('click', () => {
     campaignList.classList.add('hidden');
@@ -99,4 +100,8 @@ donationTab.addEventListener('click', () => {
 
     historyTab.classList.remove('bg-lime');
     historyTab.classList.add('border', 'border-[#d6d6d6]', 'bg-white', 'text-[#555]');
+});
+
+blogLink.addEventListener('click', () => {
+    window.location.href = 'blog.html';
 });

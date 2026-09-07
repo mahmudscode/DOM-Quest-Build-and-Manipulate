@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Donate Bangladesh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { lime: '#B5F34B', paper: '#FAF9F6' },
+                    fontFamily: { sans: ['Karla', 'ui-sans-serif', 'system-ui', 'sans-serif'] }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-paper font-sans text-[#151515] antialiased">
+    <div class="min-h-screen w-full bg-paper">
+        <p class="fixed left-5 top-2 z-50 text-xs text-white/45 sm:absolute sm:left-5 sm:top-2">Blog Page</p>
+        <header class="fixed inset-x-0 top-0 z-40 flex h-20 items-center justify-between bg-[#f8f7f3] px-5 shadow-sm sm:px-10 lg:px-16">
+            <a href="index.html" class="rounded bg-lime px-5 py-2 text-sm font-bold leading-none">Home</a>
+            <div class="flex items-center gap-3">
+                <img src="assets/logo.png" alt="" class="h-10 w-10 object-contain">
+                <span class="text-sm font-bold sm:text-base">Donate Bangladesh</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-[#393939]">
+                <img src="assets/coin.png" alt="" class="h-4 w-4 object-contain">
+                <span>100000 <span class="text-xl">৳</span> BDT</span>
+            </div>
+        </header>
+
+        <main class="mx-auto w-full max-w-[900px] px-5 pb-12 pt-36 sm:px-10 lg:px-16">
+            <section id="blog-content" aria-live="polite">
+                <p class="text-center text-sm font-bold uppercase tracking-[0.2em] text-[#789b32]">Donate Bangladesh</p>
+                <h1 class="mt-3 text-center text-3xl font-bold text-[#202020] sm:text-4xl">Frequently Asked Questions</h1>
+                <div id="question-list" class="mt-8 space-y-4"></div>
+            </section>
+            <p id="blog-error" class="hidden mt-8 text-center text-sm text-red-600">The blog questions could not be loaded.</p>
+        </main>
+
+        <footer class="h-14 bg-[#f8f7f3]"></footer>
+    </div>
+
+    <script src="js/blog.js"></script>
+</body>
+</html>
